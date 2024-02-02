@@ -1,19 +1,19 @@
-'use client'
+"use client";
 import { MdOutlineMail } from "react-icons/md";
 import { IoKeyOutline } from "react-icons/io5";
 import { useReducer } from "react";
 const reducer = (state, action) => {
-    return ({...state, [action.name]: action.value})
-}
+  return { ...state, [action.name]: action.value };
+};
 export default function page() {
-    const[formData, dispatcher] = useReducer(reducer, {})
-    const inputHandler = ({target}) => {
-        dispatcher({name: target.name, value: target.value})
-    }
-    
-    const submitHandler = () => {
-        console.log(formData)
-    }
+  const [formData, dispatcher] = useReducer(reducer, {});
+  const inputHandler = ({ target }) => {
+    dispatcher({ name: target.name, value: target.value });
+  };
+
+  const submitHandler = () => {
+    console.log(formData);
+  };
   return (
     <>
       <div className="flex justify-center my-2">
@@ -52,9 +52,9 @@ export default function page() {
             />
           </div>
           <button
-          onClick={submitHandler}
+            onClick={submitHandler}
             type="button"
-            className="font-semibold px-2 py-1 bg-yellow-700 hover:bg-yellow-800 text-white rounded transition-all shadow-xl active:scale-[0.98] active:shadow-none"
+            className="font-semibold px-2 py-1 bg-yellow-700 hover:bg-yellow-800 text-white rounded transition-all shadow-xl active:shadow-none"
           >
             Login
           </button>
